@@ -10,19 +10,26 @@
 	<body>
 		<!--Оболочка всей страницы-->
 		<!--Используется как грид-контейнер, чтобы разнести футер и контент-->
-		<div class="page">
-			<!--Подключаем хедер обязательно в коментарии-->
-			<!--Хедер - грид элемент-->
+
+		<div class="wrapper">
+			<main class="page">
+				<!--Подключаем хедер обязательно в коментарии-->
 				<!-- @import "header.html" -->
-			<!--Контент (грид-элемент + грид-контейнер)-->
-			<main class="main">
+				<div class="main-screen">
+					<div class="main-screen__bg ibg">
+						<img src="/img/images/menu_bg.png" alt="menu_bg">
+					</div>
+				</div>
+				<div class="content">
+
+				</div>
+
+				<!--Верстаем футер-->
+				<footer class="footer"></footer>
 			</main>
-				
-			<!--Верстаем футер-->
-			<footer class="footer">
-			</footer>	
 		</div>
-	
+		<script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+		<script src="/js/script.js"></script>
 	</body>
 </html>	
 	

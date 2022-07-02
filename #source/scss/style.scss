@@ -6,7 +6,7 @@
 /************************************************************
                 	FONTS
 ************************************************************/
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 @import "fonts.scss"; 
 
 /************************************************************
@@ -31,8 +31,9 @@ $maxWidth: 1600;
 
 //------Общие параметры---------------------------------------------
 body {
-	font-family: "MyriadProRegular", "Montserrat", sans-serif;
+	font-family: "Lato", "Montserrat", sans-serif;
 	font-size: 14px;
+	font-weight: 400;
 	background-color: #f7f7f7;
 }
 
@@ -72,13 +73,6 @@ body {
 		left: 0;
 	}
 }
-
-
-.content {
-	
-}
-
-
 
 .container {
 	max-width: 1125px;
@@ -148,7 +142,7 @@ body {
 	&__list {
 		display: flex;
 
-		@media (max-width:767px) {
+		@media (max-width: 767px) {
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
@@ -201,9 +195,7 @@ body {
 					top: 40px;
 					margin: 0px -2px 0px 0px;
 				}
-
 			}
-
 		}
 	}
 
@@ -214,7 +206,7 @@ body {
 		text-transform: uppercase;
 		letter-spacing: 2.6px;
 
-		@media (max-width:767px) {
+		@media (max-width: 767px) {
 			color: #fff;
 			font-size: 20px;
 		}
@@ -268,17 +260,198 @@ body {
 }
 //-----------------------------------------------------------------
 
-.nav {
+.content {
+	
+}
+
+.generation {
+
+	&__block {
+		margin: 117px 0px 117px 0px;
+		@media (max-width: 900px) {
+			margin: 80px 0px 80px 0px;
+		}
+		@media (max-width: 600px) {
+			margin: 30px 0px 30px 0px;
+		}
+	}
+
+}
+
+.block {
+
+	text-align: center;
+
+	&__icon {
+		margin: 0px 0px 30px 0px;
+	}
+
+	&__title {
+		color: #353738;
+		font-size: 18px;
+		font-weight: 700;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 3.6px;
+		line-height: 24px;
+		margin: 0px 0px 18px 0px;
+	}
+
+	&__text {
+		color: #848789;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 34px;
+		text-align: center;
+	}
+
+	&__text-vintage {
+		color: #848789;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 30px;
+		text-align: justify;
+		&:after {
+			/* Style for "line" */
+			content: '';
+			display: block;
+			margin: 35px auto 0 auto;
+			width: 50px;
+			height: 1px;
+			background-color: #d7d7d7;
+			@media (max-width: 1500px) {
+				margin: 15px auto 0 auto;
+			}
+		}
+	}
+}
+
+.vintage {
+
+	&__block {
+		//Чтобы заработал ibg
+		height: 100%;
+    	display: block;
+    	position: relative;
+		@media (max-width: 1100px) {
+			height: auto;
+			padding: 0px 0px 70% 0px;
+		}
+		
+	}
+
+	//----Разворот второго блока с флексами--------
+	&__rev {
+		.vintage__column {
+			order: 1;
+
+			&-big {
+				order: 2;
+			}
+		}
+	}
+	//---------------------------------------------
+
+	&__row {
+		display: flex;
+		@media (max-width: 1100px) {
+			flex-direction: column;
+		}
+	}
+
+	&__column {
+		flex: 0 1 33.333%;
+	}
+
+	&__column-big {
+		flex: 0 1 66.667%;
+	}
 
 	&__item {
+	}
+
+	&__content {
+		padding: 80px 65px 55px 65px;
+		//Стрелка------------
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -10px;
+			left: 50%;
+			margin: 0px 0px 0px -10px;
+			width: 0;
+			height: 0;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid #fff;
+			//--------------------------------
+		}
+		@media (max-width: 1500px) {
+			padding: 40px 35px 30px 35px;
+		}
+	}
+
+	&__image {
+		padding: 0px 0px 37.51% 0px;
+	}
+
+	//Перестановка местами блоков 3 раздела
+	&-last{
+		.vintage__column {
+			&:nth-child(1){
+				order: 2;
+			}
+			&:nth-child(2){
+				order: 1;
+			}
+			&:nth-child(3){
+				order: 3;
+			}
+		}
+	}
+}
+.item {
+	//Чтобы заработал ibg
+	height: 100%;
+	display: block;
+	position: relative;
+
+	&__logo {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		display: flex;
+		transition: all 0.3s ease 0s;
+		justify-content: center;
+		align-items: center;
+		background-color: rgba(109, 179, 152, 0.5);
+		z-index: 2;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&__image {
+		//Чтобы заработал ibg
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	&:hover {
+		.item__logo {
+			opacity: 1;
+			visibility: visible;
+		}	
+	}
+	@media (max-width: 1100px) {
+		height: auto;
+		padding: 0px 0px 70% 0px;
 	}
 }
 
 
-.main {
-	
-}
 
-.footer {
-	
-}

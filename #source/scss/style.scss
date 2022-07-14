@@ -719,10 +719,7 @@ body {
 
 	&__input {
 		flex: 1 1 auto;
-		//padding: 0px 8px 0px 0px;
-		@media (max-width: 500px) {
-			padding: 0px 0px 8px 0px;
-		}
+		
 
 		//Настройка самой формы инпут
 		.input {
@@ -749,6 +746,9 @@ body {
 	&__button {
 		flex: 0 0 146px;
 		padding: 0px 0px 0px 20px;
+		@media (max-width: 500px) {
+			padding: 10px 0px 0px 0px;
+		}
 	}
 
 	&__btn {
